@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Para Antonia</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Press+Start+2P&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -78,31 +78,18 @@ canvas{
         0 0 15px rgba(255,100,150,.4);
 }
 
-/* Corazón pixel estilo retro */
+/* Corazón estilo fuente */
 .heart{
-    margin:35px auto 0;
-    width:60px;
-    height:60px;
-    position:relative;
-    animation:pixelPulse 1.2s infinite;
-}
-
-.heart::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:20px;
-    width:20px;
-    height:20px;
-    background:#ff003c;
-    box-shadow:
-        -20px 20px #ff003c,
-        0px 20px #ff003c,
-        20px 20px #ff003c,
-        -20px 40px #ff003c,
-        0px 40px #ff003c,
-        20px 40px #ff003c,
-        0px 60px #ff003c;
+    font-family: 'Press Start 2P', monospace;
+    font-size:clamp(2.5rem,6vw,5rem);
+    color:#ff003c;
+    text-shadow:
+        0 0 6px #ff003c,
+        0 0 18px #ff003c,
+        0 0 30px #ff003c,
+        0 0 60px #ff003c;
+    margin-top:30px;
+    animation:heartBeat 1.5s infinite;
 }
 
 /* Animaciones */
@@ -118,9 +105,9 @@ canvas{
     to{opacity:1}
 }
 
-@keyframes pixelPulse{
+@keyframes heartBeat{
     0%{transform:scale(1)}
-    50%{transform:scale(1.18)}
+    50%{transform:scale(1.2)}
     100%{transform:scale(1)}
 }
 </style>
@@ -132,7 +119,7 @@ canvas{
 
 <div class="container">
     <div class="neon-text">Te amo Antonia</div>
-    <div class="heart"></div>
+    <div class="heart">♥</div>
     <div class="subtitle">FELIZ SAN VALENTÍN</div>
 </div>
 

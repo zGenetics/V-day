@@ -40,6 +40,9 @@ canvas{
     position:relative;
     z-index:2;
     text-align:center;
+    padding:20px 40px;
+    border-radius:20px;
+    background: radial-gradient(circle at center, rgba(255,0,150,0.08), transparent 70%);
 }
 
 /* Texto efecto escritura */
@@ -50,23 +53,27 @@ canvas{
     border-right:3px solid #00f7ff;
     width:0;
     animation:typing 3s steps(18) forwards, blink .8s infinite;
-    color:#ff2fd1;
+
+    background: linear-gradient(90deg,#ff2fd1,#00f7ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
     text-shadow:
-        0 0 5px #ff2fd1,
-        0 0 15px #ff2fd1,
-        0 0 30px #ff00ff,
-        0 0 60px #00f7ff;
+        0 0 5px rgba(255,0,200,.7),
+        0 0 15px rgba(255,0,200,.6),
+        0 0 30px rgba(0,247,255,.6),
+        0 0 60px rgba(0,247,255,.4);
 }
 
-/* Corazón */
 .heart{
     margin-top:25px;
     font-size:clamp(2rem,6vw,4rem);
-    color:#00f7ff;
+    color:#ff003c;
     text-shadow:
-        0 0 10px #00f7ff,
-        0 0 25px #00f7ff,
-        0 0 60px #00f7ff;
+        0 0 5px #ff003c,
+        0 0 15px #ff003c,
+        0 0 30px #ff003c,
+        0 0 60px #ff003c;
     animation:pulse 1.5s infinite;
 }
 

@@ -25,7 +25,7 @@ body{
     color:white;
 }
 
-/* Canvas lluvia */
+/* Lluvia */
 canvas{
     position:fixed;
     top:0;
@@ -35,36 +35,50 @@ canvas{
     z-index:0;
 }
 
-/* Contenido */
 .container{
     position:relative;
     z-index:2;
     text-align:center;
-    padding:20px 40px;
-    border-radius:20px;
-    background: radial-gradient(circle at center, rgba(255,0,150,0.08), transparent 70%);
+    padding:30px 50px;
+    border-radius:30px;
+    background: radial-gradient(circle at center, rgba(255,0,120,0.08), transparent 70%);
 }
 
-/* Texto efecto escritura */
+/* Texto principal */
 .neon-text{
-    font-size:clamp(2rem,7vw,5rem);
+    font-size:clamp(2.2rem,7vw,5rem);
     white-space:nowrap;
     overflow:hidden;
-    border-right:3px solid #00f7ff;
+    border-right:3px solid #ff4b6e;
     width:0;
     animation:typing 3s steps(18) forwards, blink .8s infinite;
 
-    background: linear-gradient(90deg,#ff2fd1,#00f7ff);
+    background: linear-gradient(90deg,#ff2fd1,#ff4b6e);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 
     text-shadow:
-        0 0 5px rgba(255,0,200,.7),
-        0 0 15px rgba(255,0,200,.6),
-        0 0 30px rgba(0,247,255,.6),
-        0 0 60px rgba(0,247,255,.4);
+        0 0 5px rgba(255,0,120,.7),
+        0 0 15px rgba(255,0,120,.6),
+        0 0 30px rgba(255,0,80,.5),
+        0 0 60px rgba(255,0,80,.3);
 }
 
+/* Subtexto */
+.subtitle{
+    margin-top:20px;
+    font-size:clamp(1rem,3vw,1.5rem);
+    letter-spacing:3px;
+    color:#ff9bb3;
+    opacity:0;
+    animation:fadeIn 2s ease forwards;
+    animation-delay:3.2s;
+    text-shadow:
+        0 0 5px rgba(255,100,150,.5),
+        0 0 15px rgba(255,100,150,.4);
+}
+
+/* Corazón */
 .heart{
     margin-top:25px;
     font-size:clamp(2rem,6vw,4rem);
@@ -74,7 +88,7 @@ canvas{
         0 0 15px #ff003c,
         0 0 30px #ff003c,
         0 0 60px #ff003c;
-    animation:pulse 1.5s infinite;
+    animation:pulse 1.8s infinite;
 }
 
 /* Animaciones */
@@ -88,8 +102,12 @@ canvas{
 
 @keyframes pulse{
     0%{transform:scale(1)}
-    50%{transform:scale(1.2)}
+    50%{transform:scale(1.15)}
     100%{transform:scale(1)}
+}
+
+@keyframes fadeIn{
+    to{opacity:1}
 }
 </style>
 </head>
@@ -101,15 +119,11 @@ canvas{
 <div class="container">
     <div class="neon-text">Te amo Antonia</div>
     <div class="heart">❤</div>
+    <div class="subtitle">FELIZ SAN VALENTÍN</div>
 </div>
 
-<!-- Música (cambia el link por el mp3 que subas) -->
-<audio autoplay loop>
-    <source src="tu-cancion.mp3" type="audio/mpeg">
-</audio>
-
 <script>
-// LLUVIA CYBERPUNK
+// Lluvia elegante suave
 const canvas = document.getElementById("rain");
 const ctx = canvas.getContext("2d");
 
@@ -117,20 +131,20 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let drops = [];
-let numberOfDrops = 150;
+let numberOfDrops = 120;
 
 for(let i=0;i<numberOfDrops;i++){
     drops.push({
         x: Math.random()*canvas.width,
         y: Math.random()*canvas.height,
-        length: Math.random()*20,
-        speed: Math.random()*4+4
+        length: Math.random()*15,
+        speed: Math.random()*3+2
     });
 }
 
 function drawRain(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
-    ctx.strokeStyle="rgba(0,255,255,0.4)";
+    ctx.strokeStyle="rgba(255,50,120,0.25)";
     ctx.lineWidth=1;
 
     for(let i=0;i<drops.length;i++){
